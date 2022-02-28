@@ -1,11 +1,48 @@
 <template>
-  <public-layout title="Public">
+  <public-layout title="Passcode">
     <template #header>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Welcome Page
+        Default Index Page
       </h2>
     </template>
-    <div v-if="$page.props.canLogin">Can Login</div>
+    <jet-authentication-card>
+      <template #logo>
+        <jet-authentication-card-logo />
+      </template>
+
+      <jet-validation-errors class="mb-4" />
+
+      <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+        {{ status }}
+      </div>
+
+      <form @submit.prevent="submit">
+        <div>
+          <jet-label
+            for="passcode"
+            value="Please enter the passcode bellow to access your media"
+          />
+          <jet-input
+            id="passcode"
+            type="text"
+            class="mt-1 block w-full"
+            v-model="form.passcode"
+            required
+            autofocus
+          />
+        </div>
+
+        <div class="flex items-center justify-end mt-4">
+          <jet-button
+            class="ml-4"
+            :class="{ 'opacity-25': form.processing }"
+            :disabled="form.processing"
+          >
+            Access Media
+          </jet-button>
+        </div>
+      </form>
+    </jet-authentication-card>
   </public-layout>
 </template>
 
@@ -33,7 +70,7 @@ export default defineComponent({
   },
 
   props: {
-    canLogin: Boolean,
+    canResetPassword: Boolean,
     status: String,
   },
 
@@ -51,7 +88,7 @@ export default defineComponent({
         .transform((data) => ({
           ...data,
         }))
-        .get(this.route("organization.check"), {
+        .get(this.route("validatepasscode"), {
           onFinish: () => this.form.reset("passcode"),
         });
     },

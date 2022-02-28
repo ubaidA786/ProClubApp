@@ -27,6 +27,11 @@ class Organization extends Model
         'status',
     ];
 
+    public function mediajoin()
+    {
+        return $this->belongsTo('App\Models\Media', 'media_id');
+    }
+
     public function scopeFilter($query, array $filters)
     {
         $query->orderBy('created_at', 'desc');

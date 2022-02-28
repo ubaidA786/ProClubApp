@@ -9,6 +9,10 @@ class Media extends Model
 {
     use HasFactory;
     protected $fillable = ['title', 'url', 'description', 'status'];
+    public function organization()
+    {
+        return $this->hasMany('App\Models\Organization');
+    }
     public function scopeFilter($query, array $filters)
     {
         $query->orderBy('created_at', 'desc');

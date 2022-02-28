@@ -19,14 +19,18 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', [DefaultController::class, 'index']);
+
+/* Route::get('/', function (Request $request) {
+    
+        return Inertia::render('Welcome', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+        ]);
+    
+}); */
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/dashboard', function () {
@@ -34,12 +38,15 @@ Route::middleware(['auth:sanctum', 'verified'])
     })
     ->name('dashboard');
 
-Route::get('organization/check', [
-    OrganizationController::class,
-    'check',
-])->name('organization.check');
-
+//Media access pages
 Route::get('default', [DefaultController::class, 'index'])->name('default');
+Route::get('showmedia', [DefaultController::class, 'show'])->name('showmedia');
+Route::get('validatepasscode', [DefaultController::class, 'check'])->name(
+    'validatepasscode'
+);
+Route::get('passcode', [DefaultController::class, 'passcode'])->name(
+    'passcode'
+);
 
 // Users
 

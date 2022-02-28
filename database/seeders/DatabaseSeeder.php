@@ -23,14 +23,14 @@ class DatabaseSeeder extends Seeder
         // $faker->addProvider(new \Faker\Provider\Youtube($faker));
         $faker = \Faker\Factory::create();
         $links = [
-            'https://www.youtube.com/watch?v=1gVvSfBxdEQ',
-            'https://www.youtube.com/watch?v=ScT12CwuPEc',
-            'https://www.youtube.com/watch?v=WOI7eihc5Gg',
-            'https://www.youtube.com/watch?v=b7FNvq11CEw',
-            'https://www.youtube.com/watch?v=o-k5Il-uwvY',
-            'https://www.youtube.com/watch?v=HE9nLWFZ6ac',
-            'https://www.youtube.com/watch?v=KVVOTXg-ROs',
-            'https://www.youtube.com/watch?v=FfX_5NxJdnY',
+            'https://www.youtube.com/embed/1gVvSfBxdEQ',
+            'https://www.youtube.com/embed/ScT12CwuPEc',
+            'https://www.youtube.com/embed/WOI7eihc5Gg',
+            'https://www.youtube.com/embed/b7FNvq11CEw',
+            'https://www.youtube.com/embed/o-k5Il-uwvY',
+            'https://www.youtube.com/embed/HE9nLWFZ6ac',
+            'https://www.youtube.com/embed/KVVOTXg-ROs',
+            'https://www.youtube.com/embed/FfX_5NxJdnY',
         ];
 
         for ($i = 0; $i < 20; $i++) {
@@ -57,6 +57,7 @@ class DatabaseSeeder extends Seeder
                 'zip' => $faker->postcode,
                 'description' => $faker->text,
                 'passcode' => $faker->postcode,
+                'ip_addresses' => '127.0.0.1',
                 'media_id' => $ids[$i],
             ]);
         }

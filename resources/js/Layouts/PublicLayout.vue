@@ -20,10 +20,10 @@
               <!-- Navigation Links -->
               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <jet-nav-link
-                  :href="route('dashboard')"
-                  :active="route().current('dashboard')"
+                  :href="route('showmedia')"
+                  :active="route().current('showmedia')"
                 >
-                  Dashboard
+                  Media
                 </jet-nav-link>
               </div>
             </div>
@@ -175,12 +175,6 @@
                       </form>
                     </span>
                     <span v-else>
-                      <jet-dropdown-link :href="route('register')">
-                        Register
-                      </jet-dropdown-link>
-
-                      <div class="border-t border-gray-100"></div>
-
                       <jet-dropdown-link :href="route('login')">
                         Login
                       </jet-dropdown-link>
