@@ -121,28 +121,28 @@ Route::post('organization', [OrganizationController::class, 'store'])
     ->name('organization.store')
     ->middleware('auth');
 
-Route::get('organization/{organizations}/edit', [
+Route::get('organization/{organization}/edit', [
     OrganizationController::class,
     'edit',
 ])
     ->name('organization.edit')
     ->middleware('auth');
 
-Route::put('organization/{organizations}', [
+Route::put('organization/{organization}', [
     OrganizationController::class,
     'update',
 ])
     ->name('organization.update')
     ->middleware('auth');
 
-Route::delete('organization/{organizations}', [
+Route::delete('organization/{organization}', [
     OrganizationController::class,
     'destroy',
 ])
     ->name('organization.destroy')
     ->middleware('auth');
 
-Route::put('organization/{organizations}/restore', [
+Route::put('organization/{organization}/restore', [
     OrganizationController::class,
     'restore',
 ])

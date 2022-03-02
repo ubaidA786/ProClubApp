@@ -67,10 +67,27 @@ class DefaultController extends Controller
             $request->input('passcode')
         )->first();
 
+        $date = date('Y-m-d');
+
         //passcode not matched
         if (is_null($organization)) {
             $errorMessage = 'Passcode is not correct.';
-        } else {
+        } elseif (
+            !is_null($organization->access_start_date) &&
+            $organization->access_start_date > $date
+        ) {
+            $errorMessage =
+                'You can access on/after ' . $organization->access_start_date;
+        } elseif (
+            !is_null($organization->access_end_date) &&
+            $organization->access_end_date < $date
+        ) {
+            $errorMessage =
+                'Your access is expired on ' . $organization->access_end_date;
+        } elseif (
+            !is_null($organization->ip_addresses) &&
+            '' != $organization->ip_addresses
+        ) {
             //check ip
             $ip_addresses = $organization->ip_addresses;
             $result = '';

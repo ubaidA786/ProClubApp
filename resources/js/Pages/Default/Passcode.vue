@@ -2,20 +2,18 @@
   <public-layout title="Passcode">
     <template #header>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Default Index Page
+        Protected : Media Access
       </h2>
     </template>
     <jet-authentication-card>
-      <template #logo>
-        <jet-authentication-card-logo />
-      </template>
-
       <jet-validation-errors class="mb-4" />
 
       <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
         {{ status }}
       </div>
-
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        Media Access
+      </h2>
       <form @submit.prevent="submit">
         <div>
           <jet-label

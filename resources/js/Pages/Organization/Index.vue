@@ -2,7 +2,7 @@
   <app-layout title="Organization">
     <template #header>
       <h2 class="text-xl font-semibold leading-tight text-gray-800">
-        Organization
+        Organizations
       </h2>
     </template>
     <div class="overflow-hidden bg-white p-6 shadow-xl sm:rounded-lg">
@@ -23,7 +23,7 @@
                 pl-3
                 pr-10
                 text-base
-                focus:border-indigo-500 focus:outline-none focus:ring-indigo-500
+                focus:border-gray-500 focus:outline-none focus:ring-gray-500
                 sm:text-sm
               "
             >
@@ -47,7 +47,7 @@
                 rounded-md
                 border-gray-300
                 shadow-sm
-                focus:border-indigo-500 focus:ring-indigo-500
+                focus:border-gray-500 focus:ring-gray-500
                 sm:text-sm
               "
             /> -->
@@ -60,17 +60,17 @@
                 justify-center
                 rounded-md
                 border border-transparent
-                bg-indigo-600
+                bg-gray-600
                 py-2
                 px-4
                 text-sm
                 font-medium
                 text-white
                 shadow-sm
-                hover:bg-indigo-700
+                hover:bg-gray-700
                 focus:outline-none
                 focus:ring-2
-                focus:ring-indigo-500
+                focus:ring-gray-500
                 focus:ring-offset-2
                 sm:ml-3
               "
@@ -209,7 +209,7 @@
                       >
                         <Link
                           :href="route('organization.edit', organization.id)"
-                          class="text-indigo-600 hover:text-indigo-900"
+                          class="text-gray-600 hover:text-gray-900"
                         >
                           Edit
                         </Link>

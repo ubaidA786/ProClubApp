@@ -32,6 +32,11 @@ class Organization extends Model
         return $this->belongsTo('App\Models\Media', 'media_id');
     }
 
+    public function scopeOrderByName($query)
+    {
+        $query->orderBy('name');
+    }
+
     public function scopeFilter($query, array $filters)
     {
         $query->orderBy('created_at', 'desc');

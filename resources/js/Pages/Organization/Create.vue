@@ -9,7 +9,7 @@
       <form @submit.prevent="store" class="space-y-8 divide-y divide-gray-200">
         <div class="space-y-8 divide-y divide-gray-200">
           <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="name"
                 v-bind:class="
@@ -28,14 +28,14 @@
                   type="text"
                   v-bind:class="
                     form.errors.name
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p v-text="form.errors.name" class="text-sm text-red-500"></p>
               </div>
             </div>
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="address_1"
                 v-bind:class="
@@ -47,15 +47,15 @@
                 Address 1
               </label>
               <div class="mt-1">
-                <input
+                <textarea
                   id="address_1"
                   v-model="form.address_1"
                   :error="form.errors.address_1"
                   type="text"
                   v-bind:class="
                     form.errors.address_1
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p
@@ -65,7 +65,7 @@
               </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="address_2"
                 v-bind:class="
@@ -77,15 +77,15 @@
                 Address 2
               </label>
               <div class="mt-1">
-                <input
+                <textarea
                   id="address_2"
                   v-model="form.address_2"
                   :error="form.errors.address_2"
                   type="text"
                   v-bind:class="
                     form.errors.address_2
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p
@@ -95,7 +95,7 @@
               </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="city"
                 v-bind:class="
@@ -114,15 +114,15 @@
                   type="text"
                   v-bind:class="
                     form.errors.city
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p v-text="form.errors.city" class="text-sm text-red-500"></p>
               </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="state"
                 v-bind:class="
@@ -141,15 +141,15 @@
                   type="text"
                   v-bind:class="
                     form.errors.state
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p v-text="form.errors.state" class="text-sm text-red-500"></p>
               </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="zip"
                 v-bind:class="
@@ -168,15 +168,15 @@
                   type="text"
                   v-bind:class="
                     form.errors.zip
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p v-text="form.errors.zip" class="text-sm text-red-500"></p>
               </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="website"
                 v-bind:class="
@@ -195,8 +195,8 @@
                   type="text"
                   v-bind:class="
                     form.errors.website
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p
@@ -206,7 +206,7 @@
               </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="access_start_date"
                 v-bind:class="
@@ -227,8 +227,8 @@
                   max="2030-12-31"
                   v-bind:class="
                     form.errors.access_start_date
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p
@@ -238,7 +238,7 @@
               </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="access_end_date"
                 v-bind:class="
@@ -259,8 +259,8 @@
                   max="2030-12-31"
                   v-bind:class="
                     form.errors.access_end_date
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p
@@ -270,7 +270,7 @@
               </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="ip_addresses"
                 v-bind:class="
@@ -282,15 +282,15 @@
                 IP Address
               </label>
               <div class="mt-1">
-                <input
+                <textarea
                   id="ip_addresses"
                   v-model="form.ip_addresses"
                   :error="form.errors.ip_addresses"
                   type="text"
                   v-bind:class="
                     form.errors.ip_addresses
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p
@@ -300,7 +300,7 @@
               </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="passcode"
                 v-bind:class="
@@ -319,8 +319,8 @@
                   type="text"
                   v-bind:class="
                     form.errors.passcode
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p
@@ -328,9 +328,33 @@
                   class="text-sm text-red-500"
                 ></p>
               </div>
+              <div style="margin-top: 10px">
+                <a
+                  class="
+                    rounded-md
+                    border border-gray-300
+                    bg-white
+                    py-2
+                    px-4
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    shadow-sm
+                    hover:bg-gray-50
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-gray-500
+                    focus:ring-offset-2
+                  "
+                  href="javascript:void(0)"
+                  v-on:click="generatePassword"
+                >
+                  Generate Passcode
+                </a>
+              </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="media_id"
                 v-bind:class="
@@ -342,17 +366,21 @@
                 Media
               </label>
               <div class="mt-1">
-                <input
-                  id="media_id"
+                <select
                   v-model="form.media_id"
                   :error="form.errors.media_id"
-                  type="text"
                   v-bind:class="
                     form.errors.media_id
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm'
                   "
-                />
+                >
+                  <option :value="null">--- Select Media ---</option>
+                  <option v-for="med in media" :key="med.id" :value="med.id">
+                    {{ med.title }}
+                  </option>
+                </select>
+
                 <p
                   v-text="form.errors.media_id"
                   class="text-sm text-red-500"
@@ -360,7 +388,7 @@
               </div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-2">
               <label
                 for="description"
                 v-bind:class="
@@ -372,15 +400,15 @@
                 Description
               </label>
               <div class="mt-1">
-                <input
+                <textarea
                   id="description"
                   v-model="form.description"
                   :error="form.errors.description"
                   type="text"
                   v-bind:class="
                     form.errors.description
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p
@@ -388,9 +416,10 @@
                   class="text-sm text-red-500"
                 ></p>
               </div>
+              <div></div>
             </div>
 
-            <div class="sm:col-span-3">
+            <div class="sm:col-span-1">
               <label
                 for="status"
                 v-bind:class="
@@ -402,17 +431,24 @@
                 Status
               </label>
               <div class="mt-1">
-                <input
-                  id="status"
+                <select
                   v-model="form.status"
                   :error="form.errors.status"
-                  type="text"
                   v-bind:class="
                     form.errors.status
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm'
                   "
-                />
+                >
+                  <option
+                    v-for="obj in statusList"
+                    :key="obj.id"
+                    :value="obj.id"
+                  >
+                    {{ obj.name }}
+                  </option>
+                </select>
+
                 <p v-text="form.errors.status" class="text-sm text-red-500"></p>
               </div>
             </div>
@@ -442,7 +478,7 @@
                 hover:bg-gray-50
                 focus:outline-none
                 focus:ring-2
-                focus:ring-indigo-500
+                focus:ring-gray-500
                 focus:ring-offset-2
               "
               :href="route('media')"
@@ -458,19 +494,19 @@
                 justify-center
                 rounded-md
                 border border-transparent
-                bg-indigo-600
+                bg-gray-600
                 py-2
                 px-4
                 text-sm
                 font-medium
                 text-white
                 shadow-sm
-                hover:bg-indigo-700
+                hover:bg-gray-700
                 focus:outline-none
                 focus:ring-2
-                focus:ring-indigo-500
+                focus:ring-gray-500
                 focus:ring-offset-2
-                disabled:bg-indigo-300
+                disabled:bg-gray-300
               "
             >
               Save
@@ -484,22 +520,32 @@
 
 <script>
 import LoadingButton from "@/Shared/LoadingButton.vue";
+//import PasswordGenerator from "@/Shared/PasswordGenerator.vue";
 //import SelectInput from "@/Shared/SelectInput.vue";
 import AppLayout from "@/Layouts/AppLayout";
+
+const string = "abcdefghijklmnopqrstuvwxyz";
+const numeric = "0123456789";
+const punctuation = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 
 export default {
   props: {
     organization: Object,
-    media: Object,
+    statusList: Object,
+    media: Array,
+    randomPassword: String,
   },
   components: {
     AppLayout,
     LoadingButton,
+    //PasswordGenerator,
     //SelectInput,
   },
   remember: "form",
   data() {
     return {
+      passwordLength: 15,
+      password: "test",
       form: this.$inertia.form({
         name: null,
         address_1: null,
@@ -514,13 +560,51 @@ export default {
         passcode: null,
         media_id: null,
         description: null,
-        status: null,
+        status: 1,
       }),
     };
+  },
+  computed: {
+    formValid() {
+      const { passwordLength } = this;
+      return +passwordLength > 0;
+    },
   },
   methods: {
     store() {
       this.form.post(this.route("organization.store"));
+    },
+    generatePassword() {
+      const { passwordLength, formValid } = this;
+      if (!formValid) {
+        return;
+      }
+      let character = "";
+      let password = "";
+      while (password.length < passwordLength) {
+        const entity1 = Math.ceil(
+          string.length * Math.random() * Math.random()
+        );
+        const entity2 = Math.ceil(
+          numeric.length * Math.random() * Math.random()
+        );
+        const entity3 = Math.ceil(
+          punctuation.length * Math.random() * Math.random()
+        );
+        let hold = string.charAt(entity1);
+        hold = password.length % 2 === 0 ? hold.toUpperCase() : hold;
+        character += hold;
+        character += numeric.charAt(entity2);
+        //character += punctuation.charAt(entity3);
+        password = character;
+      }
+      password = password
+        .split("")
+        .sort(() => {
+          return 0.5 - Math.random();
+        })
+        .join("");
+      this.form.passcode = password.substr(0, passwordLength);
     },
   },
 };

@@ -18,17 +18,17 @@
                 justify-center
                 rounded-md
                 border border-transparent
-                bg-indigo-600
+                bg-gray-600
                 py-2
                 px-4
                 text-sm
                 font-medium
                 text-white
                 shadow-sm
-                hover:bg-indigo-700
+                hover:bg-gray-700
                 focus:outline-none
                 focus:ring-2
-                focus:ring-indigo-500
+                focus:ring-gray-500
                 focus:ring-offset-2
                 sm:ml-3
               "
@@ -228,7 +228,7 @@
                       >
                         <Link
                           :href="route('media.edit', media.id)"
-                          class="text-indigo-600 hover:text-indigo-900"
+                          class="text-gray-600 hover:text-gray-900"
                         >
                           Edit
                         </Link>
@@ -259,7 +259,7 @@
         class="mt-6"
         :links="media.links"
         :results="media"
-        :type="'media'"
+        :type="'organizations'"
       /> -->
     </div>
   </app-layout>

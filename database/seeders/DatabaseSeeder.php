@@ -21,6 +21,13 @@ class DatabaseSeeder extends Seeder
         //https://github.com/aalaap/faker-youtube
         // $faker = \Faker\Factory::create();
         // $faker->addProvider(new \Faker\Provider\Youtube($faker));
+        DB::table('users')->insert([
+            'name' => 'Brad Sapp',
+            'email' => 'brad@test.com',
+            'password' => \Hash::make('admin123'),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
         $faker = \Faker\Factory::create();
         $links = [
             'https://www.youtube.com/embed/1gVvSfBxdEQ',
@@ -56,7 +63,7 @@ class DatabaseSeeder extends Seeder
                 'state' => $faker->state,
                 'zip' => $faker->postcode,
                 'description' => $faker->text,
-                'passcode' => $faker->postcode,
+                'passcode' => $i . '-' . $faker->postcode,
                 'ip_addresses' => '127.0.0.1',
                 'media_id' => $ids[$i],
             ]);

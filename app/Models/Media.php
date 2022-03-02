@@ -13,6 +13,10 @@ class Media extends Model
     {
         return $this->hasMany('App\Models\Organization');
     }
+    public function scopeOrderByTitle($query)
+    {
+        $query->orderBy('title');
+    }
     public function scopeFilter($query, array $filters)
     {
         $query->orderBy('created_at', 'desc');

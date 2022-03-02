@@ -24,8 +24,10 @@ return new class extends Migration {
             $table->date('access_start_date')->nullable();
             $table->date('access_end_date')->nullable();
             $table->string('ip_addresses')->nullable();
-            $table->string('passcode')->nullable();
-            $table->string('media')->nullable();
+            $table
+                ->string('passcode')
+                ->nullable()
+                ->unique();
             $table->string('description')->nullable();
             $table->tinyInteger('status')->default(1);
             $table

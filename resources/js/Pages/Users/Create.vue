@@ -28,8 +28,8 @@
                   type="text"
                   v-bind:class="
                     form.errors.name
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p v-text="form.errors.name" class="text-sm text-red-500"></p>
@@ -55,8 +55,8 @@
                   type="email"
                   v-bind:class="
                     form.errors.email
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p v-text="form.errors.email" class="text-sm text-red-500"></p>
@@ -82,8 +82,8 @@
                   type="password"
                   v-bind:class="
                     form.errors.password
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p
@@ -112,8 +112,8 @@
                   type="password"
                   v-bind:class="
                     form.errors.password_confirmation
-                      ? 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-red-300 rounded-md'
-                      : 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                      ? 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-red-300 rounded-md'
+                      : 'shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md'
                   "
                 />
                 <p
@@ -148,7 +148,7 @@
                 hover:bg-gray-50
                 focus:outline-none
                 focus:ring-2
-                focus:ring-indigo-500
+                focus:ring-gray-500
                 focus:ring-offset-2
               "
               :href="route('users')"
@@ -164,19 +164,19 @@
                 justify-center
                 rounded-md
                 border border-transparent
-                bg-indigo-600
+                bg-gray-600
                 py-2
                 px-4
                 text-sm
                 font-medium
                 text-white
                 shadow-sm
-                hover:bg-indigo-700
+                hover:bg-gray-700
                 focus:outline-none
                 focus:ring-2
-                focus:ring-indigo-500
+                focus:ring-gray-500
                 focus:ring-offset-2
-                disabled:bg-indigo-300
+                disabled:bg-gray-300
               "
             >
               Save

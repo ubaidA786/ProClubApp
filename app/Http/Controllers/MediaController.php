@@ -20,7 +20,7 @@ class MediaController extends Controller
             'mediaList' => Media::filter(
                 Request::only('search', 'sort_by', 'sort_direction')
             )
-                ->paginate($paginate)
+                ->paginate(100)
                 ->withQueryString()
                 ->through(
                     fn($media) => [
@@ -35,7 +35,12 @@ class MediaController extends Controller
 
     public function create()
     {
-        return Inertia::render('Media/Create');
+        return Inertia::render('Media/Create', [
+            'statusList' => [
+                ['id' => 1, 'name' => 'Active'],
+                ['id' => 0, 'name' => 'Inactive'],
+            ],
+        ]);
     }
 
     public function store()
@@ -60,6 +65,10 @@ class MediaController extends Controller
                 'url' => $media->url,
                 'description' => $media->description,
                 'status' => $media->status,
+            ],
+            'statusList' => [
+                ['id' => 1, 'name' => 'Active'],
+                ['id' => 0, 'name' => 'Inactive'],
             ],
         ]);
     }

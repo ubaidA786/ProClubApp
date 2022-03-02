@@ -3,23 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Organization;
+use App\Models\Media;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 
 class OrganizationController extends Controller
 {
     public function index()
     {
-        $paginate = Request::only('paginate')
+        /* $paginate = Request::only('paginate')
             ? Request::only('paginate')['paginate']
-            : null;
+            : null; */
+        $organization = Organization::filter(
+            Request::only('search', 'sort_by', 'sort_direction')
+        );
         return Inertia::render('Organization/Index', [
             'filters' => Request::all('search', 'sort_by', 'sort_direction'),
-            'organizations' => Organization::filter(
-                Request::only('search', 'sort_by', 'sort_direction')
-            )
+            'organizations' => $organization
                 ->paginate(10)
                 ->withQueryString()
                 ->through(
@@ -36,7 +39,15 @@ class OrganizationController extends Controller
 
     public function create()
     {
-        return Inertia::render('Organization/Create');
+        return Inertia::render('Organization/Create', [
+            'media' => Media::orderBy('title', 'asc')
+                ->get()
+                ->map->only('id', 'title'),
+            'statusList' => [
+                ['id' => 1, 'name' => 'Active'],
+                ['id' => 0, 'name' => 'Inactive'],
+            ],
+        ]);
     }
 
     public function store()
@@ -46,11 +57,13 @@ class OrganizationController extends Controller
             'city' => ['max:20'],
             'state' => ['max:20'],
             'zip' => ['max:20'],
-            'access_start_date' => ['date_format:Y-m-d'],
-            'access_end_date' => [
-                'date_format:Y-m-d',
-                'after_or_equal:start_date',
-            ],
+            'access_start_date' => ['nullable'],
+            'access_end_date' => ['nullable'],
+            'website' => ['max:255'],
+            'ip_addresses' => ['max:255'],
+            'passcode' => ['max:255', 'unique:organizations'],
+            'description' => ['max:255'],
+            'media_id' => ['nullable', 'numeric'],
         ]);
 
         Organization::create($form);
@@ -82,6 +95,13 @@ class OrganizationController extends Controller
                 'media_id' => $organization->media_id,
                 'status' => $organization->status,
             ],
+            'statusList' => [
+                ['id' => 1, 'name' => 'Active'],
+                ['id' => 0, 'name' => 'Inactive'],
+            ],
+            'media' => Media::orderBy('title', 'asc')
+                ->get()
+                ->map->only('id', 'title'),
         ]);
     }
 
@@ -96,16 +116,16 @@ class OrganizationController extends Controller
                 'state' => ['max:20'],
                 'zip' => ['max:20'],
                 'website' => ['max:255'],
-                'access_start_date' => ['date_format:Y-m-d'],
-                'access_end_date' => [
-                    'date_format:Y-m-d',
-                    'after_or_equal:start_date',
-                ],
+                'access_start_date' => ['nullable'],
+                'access_end_date' => ['nullable'],
                 'website' => ['max:255'],
                 'ip_addresses' => ['max:255'],
-                'passcode' => ['max:255'],
+                'passcode' => [
+                    'max:255',
+                    Rule::unique('organizations')->ignore($organization->id),
+                ],
                 'description' => ['max:255'],
-                'media_id' => ['numeric'],
+                'media_id' => ['nullable', 'numeric'],
                 'status' => ['required', 'numeric'],
             ])
         );
