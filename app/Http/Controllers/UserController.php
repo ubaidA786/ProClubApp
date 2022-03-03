@@ -51,6 +51,7 @@ class UserController extends Controller
             'password' => ['max:255', 'confirmed', 'required'],
         ]);
 
+        $form['password'] = \Hash::make($form['password']);
         User::create($form);
 
         return Redirect::route('users')->with('success', 'User created.');
@@ -81,7 +82,7 @@ class UserController extends Controller
     public function update(User $user)
     {
         $object = User::findOrFail($user->id);
-        $form = Request::validate([
+        Request::validate([
             'name' => ['required', 'max:50'],
             'email' => [
                 'max:255',
@@ -91,7 +92,11 @@ class UserController extends Controller
             ],
             'password' => ['max:255', 'confirmed', 'nullable'],
         ]);
-        $user->update(Request::only('name', 'email', 'password'));
+
+        $form = Request::only('name', 'email', 'password');
+
+        $form['password'] = \Hash::make($form['password']);
+        $user->update($form);
 
         return Redirect::route('users')->with('success', 'User updated.');
     }

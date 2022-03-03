@@ -53,11 +53,6 @@ class User extends Authenticatable
      */
     protected $appends = ['profile_photo_url'];
 
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = \Hash::make($value);
-    }
-
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? null, function ($query, $search) {
